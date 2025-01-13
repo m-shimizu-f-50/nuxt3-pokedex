@@ -10,7 +10,9 @@ const { pokemons } = await usePokemons();
 
 		<ul>
 			<li v-for="pokemon in pokemons" :key="pokemon.name">
-				{{ pokemon.name }}
+				<NuxtLink :to="`/pokemons/${pokemon.name}`">
+					{{ pokemon.name }}
+				</NuxtLink>
 			</li>
 		</ul>
 	</div>
