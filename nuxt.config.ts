@@ -12,4 +12,9 @@ export default defineNuxtConfig({
 			stylistic: true,
 		},
 	},
+	runtimeConfig: {
+		pokeapi: {
+			baseURL: 'https://pokeapi.co/api/v2/',
+		},
+	},
 });

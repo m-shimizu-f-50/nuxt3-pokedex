@@ -1,4 +1,11 @@
 {
-  // https://nuxt.com/docs/guide/concepts/typescript
-  "extends": "./.nuxt/tsconfig.json"
+	// https://nuxt.com/docs/guide/concepts/typescript
+	"extends": "./.nuxt/tsconfig.json",
+	"compilerOptions": {
+		"target": "es2022", // es2022 または esnext
+		"module": "es2022", // es2022 または esnext
+		"moduleResolution": "node",
+		"strict": true,
+		"esModuleInterop": true
+	}
 }
