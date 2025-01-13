@@ -4,6 +4,7 @@ type Query = Partial<{
 	limit: number;
 }>;
 
+// 一覧API
 export const usePokemons = async (query: Query = {}) => {
 	// サーバーからAPIリクエスト
 	const { data } = await useFetch('/api/v1/pokemons', {
@@ -16,4 +17,18 @@ export const usePokemons = async (query: Query = {}) => {
 	});
 
 	return { pokemons: data };
+};
+
+// 詳細API
+export const usePokemon = async (name: string) => {
+	// サーバーからAPIリクエスト
+	const { data } = await useFetch(`/api/v1/pokemons/${name}`, {
+		default: () => null,
+		transform: (response) => {
+			if (!response) return null;
+			return response;
+		},
+	});
+
+	return { pokemon: data };
 };

@@ -1,9 +1,15 @@
 // モデルからクエリの型をインポート
 import type { PokemonsQuery } from '~/server/domains/models/pokemons';
-// インフラからPokeAPIの一覧の型をインポート
-import type { Pokemons as PokemonsFromPokeApi } from '~/server/infrastructures/pokeapi/pokemons';
-// インフラからPokeAPIの一覧の取得処理をインポート
-import { getPokemons as getPokemonsFromPokeApi } from '~/server/infrastructures/pokeapi/pokemons';
+// インフラからPokeAPIの一覧と詳細の型をインポート
+import type {
+	Pokemons as PokemonsFromPokeApi,
+	Pokemon as PokemonFromPokeApi,
+} from '~/server/infrastructures/pokeapi/pokemons';
+// インフラからPokeAPIの一覧と詳細の取得処理をインポート
+import {
+	getPokemons as getPokemonsFromPokeApi,
+	getPokemon as getPokemonFromPokeApi,
+} from '~/server/infrastructures/pokeapi/pokemons';
 
 // クエリを生成するメソッド　不必要なクエリを除外
 const createQuery = ({ offset, limit }: PokemonsQuery) => {
@@ -26,4 +32,11 @@ export const getPokemons = async (
 	const pokemons = await getPokemonsFromPokeApi(createQuery(query));
 
 	return pokemons;
+};
+
+// ポケモン詳細取得処理を抽象化
+export const getPokemon = async (name: string): Promise<PokemonFromPokeApi> => {
+	const pokemon = await getPokemonFromPokeApi(name);
+
+	return pokemon;
 };
