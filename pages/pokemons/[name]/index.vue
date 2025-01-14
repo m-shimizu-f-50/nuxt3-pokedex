@@ -13,28 +13,23 @@ const { pokemon } = await usePokemon(route.params.name as string);
 			<p>name: {{ pokemon.name }}</p>
 			<p>height: {{ pokemon.height }}</p>
 			<p>weight: {{ pokemon.weight }}</p>
-			<img
-				:src="pokemon.sprites.front_default"
-				alt=""
-				width="120"
-				height="120"
-			/>
+			<img :src="pokemon.image" alt="" width="120" height="120" />
 			<p class="space-x-2">
 				types:
 				<span v-for="(type, index) in pokemon.types" :key="index">{{
-					type.type.name
+					type
 				}}</span>
 			</p>
 			<p class="space-x-2">
 				abilities:
 				<span v-for="(ability, index) in pokemon.abilities" :key="index">{{
-					ability.ability.name
+					ability
 				}}</span>
 			</p>
 			<p class="space-x-2">
 				stats:
 				<span v-for="(stat, index) in pokemon.stats" :key="index">
-					{{ stat.stat.name }}{{ stat.base_stat }}
+					{{ stat.name }}{{ stat.value }}
 				</span>
 			</p>
 		</div>

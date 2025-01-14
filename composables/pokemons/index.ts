@@ -12,7 +12,7 @@ export const usePokemons = async (query: Query = {}) => {
 		default: () => [],
 		transform: (response) => {
 			if (!response) return [];
-			return response.results;
+			return response;
 		},
 	});
 
