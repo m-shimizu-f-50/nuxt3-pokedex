@@ -12,7 +12,8 @@ export default {
 				/bg-types-(normal|fighting|flying|poison|ground|rock|bug|ghost|steel|fire|water|grass|electric|psychic|ice|dragon|dark|fairy|shadow)/,
 		},
 		{
-			pattern: /nm-inset-stats-(HP|ATK|DEF|SpA|SpD|SPD|TOT)/,
+			pattern:
+				/nm-inset-stats-(HP|こうげき|ぼうぎょ|とくこう|とくぼう|すばやさ|合計)/,
 		},
 	],
 	theme: {
@@ -46,12 +47,12 @@ export default {
 				},
 				stats: {
 					HP: '#DF2140',
-					ATK: '#FF994D',
-					DEF: '#EECD3d',
-					SpA: '#85DDFF',
-					SpD: '#96DA83',
-					SPD: '#FB94A8',
-					TOT: '#7195DC',
+					こうげき: '#FF994D',
+					ぼうぎょ: '#EECD3d',
+					とくこう: '#85DDFF',
+					とくぼう: '#96DA83',
+					すばやさ: '#FB94A8',
+					合計: '#7195DC',
 				},
 			},
 		},
