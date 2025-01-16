@@ -3,6 +3,11 @@ import { usePokemons } from '~/composables/pokemons';
 import { formatName } from '~/utils/format';
 
 const { pokemons } = await usePokemons();
+
+// ポケモンが見つからない場合はエラーを返す
+if (pokemons.value.length <= 0) {
+	throw createError({ statusCode: 404, message: 'Pokemons not found' });
+}
 </script>
 
 <template>
