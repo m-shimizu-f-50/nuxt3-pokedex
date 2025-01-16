@@ -6,6 +6,11 @@ import { calculatePercentage } from '~/utils/calculate';
 const route = useRoute('pokemon-name');
 const router = useRouter();
 const { pokemon } = await usePokemon(route.params.name as string);
+
+// ポケモンが見つからない場合はエラーを返す
+if (pokemon.value === null) {
+	throw createError({ statusCode: 404, message: 'Pokemons not found' });
+}
 </script>
 
 <template>
