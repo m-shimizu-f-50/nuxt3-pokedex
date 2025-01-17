@@ -62,6 +62,7 @@ const rawPokemonSchema = z.object({
 		.array(),
 	sprites: z.object({
 		front_default: z.string(),
+		front_shiny: z.string(),
 	}),
 	stats: z
 		.object({

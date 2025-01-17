@@ -2,10 +2,12 @@
 import { usePokemon } from '~/composables/pokemons';
 import { formatName } from '~/utils/format';
 import { calculatePercentage } from '~/utils/calculate';
+import { useShinyMode } from '~/composables/pokemons/shiny-mode';
 
 const route = useRoute('pokemon-name');
 const router = useRouter();
 const { pokemon } = await usePokemon(route.params.name as string);
+const { isShiny } = useShinyMode('shiny');
 
 // ポケモンが見つからない場合はエラーを返す
 if (pokemon.value === null) {
@@ -17,7 +19,7 @@ if (pokemon.value === null) {
 	<div class="mx-auto max-w-[800px] space-y-4 p-4">
 		<div v-if="pokemon" class="space-y-4">
 			<img
-				:src="pokemon.image"
+				:src="isShiny ? pokemon.image.shiny : pokemon.image.default"
 				alt=""
 				width="120"
 				height="120"
