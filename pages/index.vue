@@ -1,8 +1,11 @@
 <script setup lang="ts">
 import { usePokemons } from '~/composables/pokemons';
 import { formatName } from '~/utils/format';
+import { useShinyMode } from '~/composables/pokemons/shiny-mode';
 
 const { pokemons } = await usePokemons();
+// 色違いモードを取得
+const { isShiny } = useShinyMode('shiny');
 
 // ポケモンが見つからない場合はエラーを返す
 if (pokemons.value.length <= 0) {
@@ -21,7 +24,7 @@ if (pokemons.value.length <= 0) {
 					class="group relative box-border block h-full rounded-xl border-2 border-transparent px-4 pb-4 pt-14 nm-flat-gray-100-lg hover:border-gray-300"
 				>
 					<img
-						:src="pokemon.image"
+						:src="isShiny ? pokemon.image.shiny : pokemon.image.default"
 						alt=""
 						width="120"
 						height="120"

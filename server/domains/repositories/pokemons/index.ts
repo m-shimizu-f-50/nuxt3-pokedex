@@ -42,7 +42,6 @@ export const getPokemons = async (
 			return convertListItem(response);
 		})
 	);
-
 	return pokemons;
 };
 

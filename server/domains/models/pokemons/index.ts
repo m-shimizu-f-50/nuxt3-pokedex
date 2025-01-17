@@ -5,7 +5,10 @@ import type { Pokemon as PokemonFromPokeApi } from '~/server/infrastructures/pok
 const pokemonsSchema = z.object({
 	id: z.number(),
 	name: z.string(),
-	image: z.string(),
+	image: z.object({
+		default: z.string(),
+		shiny: z.string(),
+	}),
 	types: z.string().array(),
 });
 
@@ -33,7 +36,10 @@ export const convert = (pokemon: PokemonFromPokeApi): Pokemons => {
 	return pokemonsSchema.parse({
 		id: pokemon.id,
 		name: pokemon.name,
-		image: pokemon.sprites.front_default,
+		image: {
+			default: pokemon.sprites.front_default,
+			shiny: pokemon.sprites.front_shiny,
+		},
 		types: pokemon.types.map((type) => type.type.name),
 	});
 };
