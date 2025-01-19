@@ -1,75 +1,22 @@
-# Nuxt Minimal Starter
+# PokeDex - A Nuxt 3 Project
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+PokeAPI と TypeScript を使用して作成した、ポケモン図鑑（PokeDex）の実用的なサンプルです。
 
-## Setup
+# 📘 Zenn
 
-Make sure to install dependencies:
+https://www.npmjs.com/package/zod
 
-```bash
-# npm
-npm install
+# ✨ Features
 
-# pnpm
-pnpm install
+- ポケモンリストページ
+  ポケモンの名前・画像・タイプを一覧で表示します。
 
-# yarn
-yarn install
+- ポケモン詳細ページ
+  選択したポケモンの詳細情報（ステータスや特性など）を表示します。
 
-# bun
-bun install
-```
+# 技術スタック
 
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- Nuxt 3
+- PokeAPI：本アプリケーションで使用するポケモンデータの取得元
+- TypeScript
+- TailwindCSS
