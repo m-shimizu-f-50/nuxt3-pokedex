@@ -2,11 +2,11 @@
 
 PokeAPI と TypeScript を使用して作成した、ポケモン図鑑（PokeDex）の実用的なサンプルです。
 
-# 📘 Zenn
+# Zenn
 
 https://www.npmjs.com/package/zod
 
-# ✨ Features
+# 機能
 
 - ポケモンリストページ
   ポケモンの名前・画像・タイプを一覧で表示します。
